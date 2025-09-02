@@ -1,0 +1,298 @@
+luation of Unpaid Labor in Indian Marriages
+Complete Mathematical Framework and Transparency Volume
+Independent Research Series
+Initiated by Independent Scholars
+
+Ashish Ranjan
+Independent Researcher
+ashishrjsingh786@gmail.com
+September 02, 2025
+
+This work is licensed under a Creative Commons Attribution 4.0 International License
+
+AI Assistance: Enhanced with Perplexity AI for structure and hyperlinks. Core research by the author, per ICMJE guidelines.
+
+Abstract
+This paper develops a transparent, replication-ready framework to quantify the present value of unpaid household labor in Indian marriages using India's Time Use Survey 2019 for task hours, task-specific replacement-cost wages, level and growing annuity models, and Monte Carlo uncertainty analysis.
+
+Baseline unpaid labor present values are ₹580,798 (level annuity) and ₹1,455,718 under growth-adjusted valuation with a 20% emotional labor premium, reflecting the valuation range across static and dynamic specifications.
+
+Across policy-relevant scenarios, net contribution gaps favor male monetary inputs by approximately ₹0.74 million to ₹13.39 million, with growth assumptions amplifying disparities when male expenses scale at similar rates.
+
+In 10,000-iteration simulations, the probability of male financial advantage ranges from about 91.1% to 98.8% across scenarios, indicating robustness to parameter uncertainty and modeling choices.
+
+Sensitivity analyses identify discount and growth rates as high-impact levers, while policy simulations highlight wage growth policies and care infrastructure as credible pathways to narrow gaps without double counting across valuation tracks.
+
+All code, parameter logs, and data provenance are provided in the replication repository to enable audit, replication, and cross-jurisdictional adaptation of the framework.
+
+Keywords: unpaid labor, gender economics, Indian marriages, present value, replacement cost model, stochastic mode
+
+Economic-Valuation-Clean-Manuscript.md
+Economic Valuation of Unpaid Labor - Replication Package
+Repository: unpaid-labor-valuation
+Study: Economic Valuation of Unpaid Labor in Indian Marriages: Complete Mathematical Framework and Transparency Volume
+Author: Ashish Ranjan
+Contact: ashishrjsingh786@gmail.com
+Date: September 2025
+License: CC BY 4.0
+
+Overview
+This replication package contains all computational materials required to reproduce the analyses, tables, and figures reported in "Economic Valuation of Unpaid Labor in Indian Marriages: Complete Mathematical Framework and Transparency Volume." The package follows American Economic Association data and code availability guidelines to ensure full reproducibility.
+
+Repository Structure
+text
+unpaid-labor-valuation/
+├── README.md                   # This file
+├── LICENSE                     # CC BY 4.0 license terms
+├── CITATION                    # Citation information
+├── requirements.txt            # Python dependencies
+├── environment.yml             # Conda environment specification
+├── .gitignore                  # Version control exclusions
+├── docs/                       # Documentation and guides
+│   ├── methodology-guide.md    # Detailed methodology documentation
+│   ├── parameter-guide.md      # Parameter estimation guide
+│   └── troubleshooting.md      # Common issues and solutions
+├── data/                       # Data files and sources
+│   ├── raw/                    # Original data sources (links/documentation)
+│   │   ├── TUS_2019_documentation.md
+│   │   ├── wage_sources.md
+│   │   └── financial_parameters.md
+│   ├── processed/              # Cleaned and processed data
+│   │   ├── time_allocation.csv
+│   │   ├── wage_proxies.csv
+│   │   └── financial_params.csv
+│   └── README_data.md          # Data documentation
+├── src/                        # Source code
+│   ├── __init__.py
+│   ├── config.py               # Configuration and parameters
+│   ├── data_processing.py      # Data cleaning and prep
+README.md
+# Python Dependencies for Unpaid Labor Valuation Analysis
+
+# Core scientific computing
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+
+# Visualization
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Statistical analysis
+statsmodels>=0.12.0
+
+# Data validation and testing
+pytest>=6.0.0
+pytest-cov>=2.10.0
+
+# Utilities
+tqdm>=4.60.0  # Progress bars for long computations
+openpyxl>=3.0.7  # Excel file support if needed
+xlsxwriter>=1.4.0  # Excel output formatting
+
+# Development and documentation
+jupyter>=1.0.0  # For notebook exploration
+black>=21.0.0  # Code formatting
+flake8>=3.9.0  # Code linting
+
+# Optional: Performance optimization
+numba>=0.53.0  # JIT compilation for numerical functions
+requirements.txt
+environment.yml
+environment.yml
+LICENSE
+LICENSE
+CITATION
+CITATION
+#!/bin/bash
+#
+# Complete Replication Script for Economic Valuation of Unpaid Labor
+# Executes all analysis steps in sequence
+#
+# Usage: bash run_all_analysis.sh
+#
+# Author: Ashish Ranjan
+# Date: September 2025
+
+echo "=============================================="
+echo "Economic Valuation of Unpaid Labor - Complete Replication"
+echo "Study: Ranjan (2025)"
+echo "Started at: $(date)"
+echo "=============================================="
+
+# Check if virtual environment is activated
+if [[ "$VIRTUAL_ENV" != "" ]] || [[ "$CONDA_DEFAULT_ENV" != "" ]]; then
+    echo "✓ Virtual environment detected: $VIRTUAL_ENV$CONDA_DEFAULT_ENV"
+else
+    echo "⚠ Warning: No virtual environment detected"
+    echo "  Consider activating the project environment first"
+    read -p "Continue anyway? (y/n): " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        exit 1
+    fi
+fi
+
+# Create output directories if they don't exist
+echo "Creating output directories..."
+mkdir -p outputs/tables
+mkdir -p outputs/figures
+mkdir -p outputs/logs
+
+# Set random seed for reproducibility
+export PYTHONHASHSEED=20250901
+
+# Start timing
+start_time=$(date +%s)
+
+echo ""
+echo "Step 1/6: Data Preparation"
+echo "----------------------------------------"
+python scripts/01_data_preparation.py 2>&1 | tee outputs/logs/01_data_prep.log
+if [ $? -eq 0 ]; then
+    echo "✓ Data preparation completed successfully"
+else
+    echo "✗ Data preparation failed. Check outputs/logs/01_data_prep.log"
+    exit 1
+fi
+
+echo ""
+echo "Step 2/6: Baseline Analysis"
+echo "----------------------------------------"
+python scripts/02_baseline_analysis.py 2>&1 | tee outputs/logs/02_baseline.log
+if [ $? -eq 0 ]; then
+    echo "✓ Baseline analysis completed successfully"
+else
+    echo "✗ Baseline analysis failed. Check outputs/logs/02_baseline.log"
+    exit 1
+fi
+
+echo ""
+echo "Step 3/6: Sensitivity Analysis"
+echo "----------------------------------------"
+python scripts/03_sensitivity_tests.py 2>&1 | tee outputs/logs/03_sensitivity.log
+if [ $?
+run_all_analysis.sh
+.gitignore
+.gitignore
+Data Documentation for Unpaid Labor Valuation
+Overview
+This directory contains all data files used in the Economic Valuation of Unpaid Labor analysis. All primary data sources are publicly available from government repositories as documented below.
+
+Directory Structure
+text
+data/
+├── raw/                           # Original data source documentation
+│   ├── TUS_2019_documentation.md   # Time Use Survey documentation
+│   ├── wage_sources.md             # Wage data sources and methodology
+│   └── financial_parameters.md     # Financial parameter sources
+├── processed/                      # Cleaned and processed datasets  
+│   ├── time_allocation.csv         # Processed time use data
+│   ├── wage_proxies.csv            # Constructed wage proxies
+│   └── financial_params.csv        # Discount rates and growth parameters
+└── README_data.md                  # This file
+Primary Data Sources
+1. India Time Use Survey 2019
+Source: Ministry of Statistics and Programme Implementation (MOSPI)
+URL: http://mospi.nic.in/time-use-survey
+Access: Publicly available
+Format: PDF reports with aggregate statistics
+Coverage: All states and union territories of India
+Sample Size: 138,799 households
+Collection Period: January-December 2019
+
+Usage in Study:
+
+Female and male time allocation patterns (Table 2)
+
+Activity-specific minutes per day for unpaid work categories
+
+Basis for emotional labor adjustment (20% premium)
+
+Data Extraction Method:
+
+Manual extraction from published PDF reports
+
+Cross-validation across multiple tables
+
+Annual hour calculations using 365-day conversion
+
+2. Minimum Wage Database
+Source: Labour Bureau, Government of India
+URL: https://labour.gov.in/minimum-wages
+Access: Publicly available
+Format: State-wise notifications and rates
+Coverage: All states, central government rates
+Reference Period: 2025 notifications
+
+Usage in Study:
+
+Base wage
+
+README_data.md
+"""
+Configuration and Parameters for Unpaid Labor Valuation Analysis
+
+This module contains all parameters, constants, and configuration settings
+used throughout the analysis. Centralizing these values ensures consistency
+and facilitates sensitivity testing.
+
+Author: Ashish Ranjan
+Date: September 2025
+"""
+
+import os
+from pathlib import Path
+
+# =============================================================================
+# PROJECT CONFIGURATION
+# =============================================================================
+
+# Project metadata
+PROJECT_NAME = "Economic Valuation of Unpaid Labor"
+AUTHOR = "Ashish Ranjan"
+CONTACT = "ashishrjsingh786@gmail.com"
+VERSION = "1.0"
+DATE = "September 2025"
+
+# Random seed for reproducibility
+RANDOM_SEED = 20250901
+
+# File paths
+PROJECT_ROOT = Path(__file__).parent.parent
+DATA_DIR = PROJECT_ROOT / "data"
+OUTPUTS_DIR = PROJECT_ROOT / "outputs"
+FIGURES_DIR = OUTPUTS_DIR / "figures"
+TABLES_DIR = OUTPUTS_DIR / "tables"
+LOGS_DIR = OUTPUTS_DIR / "logs"
+
+# =============================================================================
+# DATA PARAMETERS
+# =============================================================================
+
+# Time Use Survey 2019 - Time allocation (minutes per day)
+TIME_ALLOCATION = {
+    'food_preparation': {'female': 98, 'male': 12},
+    'serving_food': {'female': 28, 'male': 3},
+    'cleanup_meals': {'female': 34, 'male': 2},
+    'cleaning_dwelling': {'female': 66, 'male': 8},
+    'care_textiles': {'female': 30, 'male': 3},
+    'gardening': {'female': 8, 'male': 4},
+    'shopping': {'female': 30, 'male': 12},
+    'childcare': {'female': 62, 'male': 18},
+    'teaching_children': {'female': 15, 'male': 4},
+    'adult_care': {'female': 35, 'male': 14},
+    'other_domestic': {'female': 35, 'male': 14}
+}
+
+# Total daily unpaid work minutes
+TOTAL_UNPAID_MINUTES = {
+    'female': 441,
+    'male': 94
+}
+
+# Emotional labor adjustment factor
+EMOTIONAL_LABOR_PREMIUM = 0.20  # 20% adjustment for unmeasured mental load
+
+# Annu
+config.py
