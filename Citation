@@ -1,0 +1,100 @@
+## Citation Information
+
+### Preferred Citation (BibTeX)
+
+```bibtex
+@article{ranjan2025unpaid,
+  title={Economic Valuation of Unpaid Labor in Indian Marriages: Complete Mathematical Framework and Transparency Volume},
+  author={Ranjan, Ashish},
+  journal={Independent Research Series},
+  year={2025},
+  month={September},
+  doi={[DOI will be assigned upon publication]},
+  url={https://github.com/ashishrjsingh/unpaid-labor-valuation},
+  note={Replication package available at: https://github.com/ashishrjsingh/unpaid-labor-valuation}
+}
+```
+
+### Preferred Citation (APA Style)
+
+Ranjan, A. (2025). Economic valuation of unpaid labor in Indian marriages: Complete mathematical framework and transparency volume. *Independent Research Series*. https://github.com/ashishrjsingh/unpaid-labor-valuation
+
+### Preferred Citation (Chicago Style)
+
+Ranjan, Ashish. "Economic Valuation of Unpaid Labor in Indian Marriages: Complete Mathematical Framework and Transparency Volume." *Independent Research Series* (2025). https://github.com/ashishrjsingh/unpaid-labor-valuation.
+
+### Replication Package Citation
+
+If citing the replication package specifically:
+
+```bibtex
+@misc{ranjan2025replication,
+  title={Replication Package for "Economic Valuation of Unpaid Labor in Indian Marriages"},
+  author={Ranjan, Ashish},
+  year={2025},
+  month={September},
+  howpublished={GitHub repository},
+  url={https://github.com/ashishrjsingh/unpaid-labor-valuation},
+  version={1.0},
+  note={Computational replication materials following AEA guidelines}
+}
+```
+
+### Data Sources Citations
+
+When using this replication package, please also cite the primary data sources:
+
+**India Time Use Survey 2019:**
+```bibtex
+@techreport{mospi2019tus,
+  title={Time Use in India - 2019},
+  author={{Ministry of Statistics and Programme Implementation}},
+  institution={Government of India},
+  year={2019},
+  url={http://mospi.nic.in/time-use-survey}
+}
+```
+
+**Labour Bureau Minimum Wages:**
+```bibtex
+@misc{labour2025wages,
+  title={Minimum Wages Database},
+  author={{Labour Bureau}},
+  institution={Government of India},
+  year={2025},
+  url={https://labour.gov.in/minimum-wages}
+}
+```
+
+### Contact Information
+
+**Author:** Ashish Ranjan  
+**Email:** ashishrjsingh786@gmail.com  
+**ORCID:** [To be assigned]  
+**GitHub:** [@ashishrjsingh](https://github.com/ashishrjsingh)  
+**Institution:** Independent Researcher  
+
+### License
+
+This work is licensed under Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+### Acknowledgments
+
+Please acknowledge the following in any work using this replication package:
+
+- Ministry of Statistics and Programme Implementation (MOSPI), Government of India, for publicly providing the Time Use Survey 2019 data
+- Labour Bureau, Government of India, for minimum wage data
+- Reserve Bank of India for financial and economic data
+- The feminist economics research community for theoretical foundations
+- Open source software contributors whose tools enabled this analysis
+
+### Version Information
+
+- **Initial Release:** v1.0 (September 2025)
+- **Current Version:** v1.0
+- **Last Updated:** September 2, 2025
+- **Status:** Active development
+
+### DOI Assignment
+
+A DOI will be assigned upon formal publication. Until then, please use the GitHub repository URL for citation purposes.
