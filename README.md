@@ -182,7 +182,8 @@ When using these processed datasets, please cite:
 For questions about data processing or sources:
 - **Author:** Ashish Ranjan
 - **Email:** ashishrjsingh786@gmail.com
-- **Repository:** https://github.com/ashishrjsingh/unpaid-labor-valuation
+- **Repository:** https://github.com/ashishrjsingh/UnpaidLaborValuationIndia
+Public
 
 ## Last Updated
 
